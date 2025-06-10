@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  evolution-api:
+    container_name: evolution_api
+    image: atendai/evolution-api:latest # ou uma versão específica
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      AUTHENTICATION_API_KEY: "B1h@m3k400BiaMiguel2025" # **MUITO IMPORTANTE: Altere para uma chave forte!**
+      DATABASE_URL: "postgresql://postgres.vkccbmhqhpnithbuhcdo:[YOUR-PASSWORD]@aws-0-sa-east-1.pooler.supabase.com:5432/postgres"
+      SUPABASE_SERVICE_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZrY2NibWhxaHBuaXRoYnVoY2RvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc0OTUxODA5NSwiZXhwIjoyMDY1MDk0MDk1fQ.Fpp7FcWpCMHmFdcWVx8H3dL8zbzqyI2obqKyHfwfjC8" # Ou SUPABASE_ANON_KEY, dependendo da sua configuração
+      # DATABASE_NAME: "nome_do_banco" # Opcional, se necessário
